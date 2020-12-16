@@ -1,0 +1,22 @@
+<div class="game" [class]="_isEnded ? 'game--disabled' : ''">
+    <ng-container *ngIf="!_isStarted && !_isEnded; else gameZone">
+        <button ngbButton class="game__launch-btn" (click)="launchGame()">Launche Gaïme</button>
+    </ng-container>
+</div>
+
+<ng-template #gameZone>
+    <ng-container>
+        <h3 class="game__time">{{time}}</h3>
+        <div class="game__clickzone-border">
+            <div (mouseup)="increaseCount()" (mousedown)="preventSelection($event)" class="game__clickzone">
+            </div>
+        </div>
+    </ng-container>
+
+    <div *ngIf="_isEnded" class="game__result">
+        <p>Your score is <span class="a-bit-larger-txt">{{score}}</span> clicks!<br />
+            <app-tweet-share [text]="tweetText">Share your fantastic achievement on Twitter!</app-tweet-share>
+        </p>
+        <button class="game__reset-btn" (click)="launchGame()">Start again</button>
+    </div>
+</ng-template>

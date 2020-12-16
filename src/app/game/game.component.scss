@@ -1,0 +1,80 @@
+@import "../../styles/index.scss";
+
+.game {
+    max-width: 900px;
+    margin: auto;
+    min-height: $gameMinHeight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+    &__launch-btn, &__reset-btn {
+        height: 50px;
+        background-color: $pink;
+        font-weight: 600;
+        border: 1px solid $white;
+        color: $white;
+        letter-spacing: $base-gap;
+        font-size: 18px;
+        padding: 0 $gap-2X;
+        cursor: pointer;
+    }
+
+    &__time {
+        font-size: 30px;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    &__clickzone-border {
+        background-color: $white;
+        border: 2px solid $pink;
+        width: 100%;
+        height: 200px;
+        padding: $base-gap;
+    }
+
+    &__clickzone {
+        border: 1px solid $white;
+        width: 100%;
+        height: 100%;
+        background-color: $pink;
+        cursor: pointer;
+
+        &:active {   
+            background-color: $black;
+        }
+    }
+
+
+    &__result {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-bottom: $gap-2X;
+
+        > p {
+            text-align: center;
+            width: 100%;
+            line-height: 1.8;
+        }
+    }
+
+    &--disabled {
+        .game__clickzone {
+            background-color: rgb(133, 130, 130);
+            cursor: initial;
+            &:active {   
+                background-color: rgb(133, 130, 130);
+            }
+        }
+
+        .game__clickzone-border {
+            border: 1px solid rgb(133, 130, 130);
+        }
+    }
+}

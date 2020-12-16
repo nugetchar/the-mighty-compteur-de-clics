@@ -1,0 +1,9 @@
+$headerMinHeight: 150px;
+$base-gap: 8px;
+$gap-2X: 2 * $base-gap;
+$gameMinHeight: calc(100vh - #{$headerMinHeight});
+
+// COLORS
+$pink: #EC407A;
+$white: #FFFFFF;
+$black: #000000;
