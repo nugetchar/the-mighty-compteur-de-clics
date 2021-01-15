@@ -1,5 +1,4 @@
 import { Component, NgProbeToken, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -23,6 +22,7 @@ export class GameComponent implements OnInit {
   }
 
   launchGame() {
+    window.clearInterval(this.interval);
     this.score = 0;
     this._isEnded = false;
     this.time = GameComponent.GAME_DURATION / 1000;
@@ -50,8 +50,8 @@ export class GameComponent implements OnInit {
     this.score++;
   }
 
-  preventSelection($event: MouseEvent) {
-    $event.preventDefault();
+  preventSelection(event: MouseEvent) {
+    event.preventDefault();
   }
 
   get tweetText() {
