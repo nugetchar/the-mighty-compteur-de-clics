@@ -17,6 +17,6 @@ export class TweetShareComponent implements OnInit {
   }
 
   get tweetText() {
-    return `${this.base}?text=${this.text}&via=ttoledo_js&url=${window.location.origin}`
+    return `${this.base}?text=${this.text}&via=nugetchar&url=${window.location.origin}`
   }
 }
